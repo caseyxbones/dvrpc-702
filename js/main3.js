@@ -2,6 +2,7 @@
       // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
 
 console.log ("this is the new jQuery attempt");
+console.log ("work, damn it!");
 
 $("#results").hide();
 console.log ("results hidden");
