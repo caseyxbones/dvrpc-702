@@ -99,7 +99,7 @@ function dataPull() {
       }, {}, function(layer) {
         stationData = layer;
       }).addTo(map).done(function(layer){
-            cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['count_']);
+            cdb.vis.Vis.addInfowindow(map, {https:true}, layer.getSubLayer(0), ['count_']);
         });
       dataPull.called = true;
       console.log("dataPull status" + " " + "=" + " " + dataPull.called);
