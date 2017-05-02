@@ -1,7 +1,7 @@
 // STRETCH GOALS:
       // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
 
-console.log ("6:26pm");
+console.log ("6:35pm");
 
 
 $("#results").hide();
@@ -90,13 +90,13 @@ function dataPull() {
     sublayers:
         [
         {
-          sql: " ",
-          cartocss: " ",
+          sql: "SELECT * FROM exton_2011_blocks",
+          cartocss: "",
           interactivity: "count_",
         },
         {
-          sql: " ",
-          cartocss: " "
+          sql: "SELECT * FROM regionalrailstations_1 WHERE station LIKE '%Exton%'",
+          cartocss: " ",
         }]
       }, {}, function(data) {
         stationData = data;
@@ -114,6 +114,8 @@ function dataPull() {
 console.log ("about to call datapull()");
 dataPull();
 console.log ("datapull() called");
+
+
 
 // STATION COORDINATE FUNCTIONS
     // Functions to get specific station coordinates when station is selected:
@@ -140,6 +142,8 @@ function thorndaleCoordinates (){
     );
     console.log ("thorndaleCoordinates called");
   }
+
+
 
 // STATION DATA SQL FUNCTIONS
     // Functions to get data from Carto for a station and map it
