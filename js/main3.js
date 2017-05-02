@@ -1,8 +1,6 @@
 // STRETCH GOALS:
       // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
 
-
-
 $("#results").hide();
 console.log ("results hidden");
 $("#legend").hide();
@@ -69,7 +67,7 @@ function rb2Selected(){
     // else stationData didn't exist; it makes it so that the SQL is truly refreshing and layers cannot appear on top of each other;
     // it is easier for me, personally, to work with and understand.
 function dataPull() {
-  var dataDummy = cartodb.createLayer(map, "//" + username + ".cartodb.com/u/" + username + ":443/api/v2/viz/dcb6754e-2144-11e7-98dd-0e05a8b3e3d7/viz.json",{
+  var dataDummy = cartodb.createLayer(map, "//" + username + ".cartodb.com/u/" + username + "/api/v2/viz/dcb6754e-2144-11e7-98dd-0e05a8b3e3d7/viz.json",{
     https: true,
     user_name: username,
     type: 'cartodb',
