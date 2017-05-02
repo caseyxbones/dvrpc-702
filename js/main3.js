@@ -77,7 +77,7 @@ function rb2Selected(){
     // else stationData didn't exist; it makes it so that the SQL is truly refreshing and layers cannot appear on top of each other;
     // it is easier for me, personally, to work with and understand.
 function dataPull() {
-  var dataDummy = cartodb.createLayer(map,"https://" + username + ".carto.com:443/api/v2/sql?q=",{
+  var dataDummy = cartodb.createLayer(map, {
     https: true,
     user_name: username,
     type: 'cartodb',
