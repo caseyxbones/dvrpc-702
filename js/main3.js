@@ -1,7 +1,7 @@
 // STRETCH GOALS:
       // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
 
-console.log ("6:04pm");
+console.log ("6:06pm");
 
 
 $("#results").hide();
@@ -109,7 +109,7 @@ function rb2Selected(){
 
 
 function dataPull() {
-  var dataDummy = cartodb.createLayer(map,"https://caseyxbones.carto.com/api/v1/map?stat_tag=API&config=%7B%22version%22%3A%221.3.0%22%2C%22stat_tag%22%3A%22API%22%2C%22layers%22%3A%5B%7B%22type%22%3A%22cartodb%22%2C%22options%22%3A%7B%22sql%22%3A%22%22%2C%22cartocss%22%3A%22%22%2C%22cartocss_version%22%3A%222.1.0%22%2C%22interactivity%22%3A%5B%22count_%22%5D%7D%7D%2C%7B%22type%22%3A%22cartodb%22%2C%22options%22%3A%7B%22sql%22%3A%22%22%2C%22cartocss%22%3A%22%22%2C%22cartocss_version%22%3A%222.1.0%22%7D%7D%5D%7D&callback=_cdbc_3404275795_1",function(layer) {
+  var dataDummy = cartodb.createLayer(map,"https://caseyxbones.carto.com/api/v1/map?stat_tag=API&config=%7B%22version%22%3A%221.3.0%22%2C%22stat_tag%22%3A%22API%22%2C%22layers%22%3A%5B%7B%22type%22%3A%22cartodb%22%2C%22options%22%3A%7B%22sql%22%3A%22%22%2C%22cartocss%22%3A%22%22%2C%22cartocss_version%22%3A%222.1.0%22%2C%22interactivity%22%3A%5B%22count_%22%5D%7D%7D%2C%7B%22type%22%3A%22cartodb%22%2C%22options%22%3A%7B%22sql%22%3A%22%22%2C%22cartocss%22%3A%22%22%2C%22cartocss_version%22%3A%222.1.0%22%7D%7D%5D%7D&callback=_cdbc_3404275795_1", {}, function(layer) {
         stationData = layer;
       }).addTo(map).done(function(layer){
             cdb.vis.Vis.addInfowindow(map,
