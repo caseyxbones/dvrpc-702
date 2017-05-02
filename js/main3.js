@@ -1,8 +1,7 @@
 // STRETCH GOALS:
       // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
 
-console.log ("6:42pm");
-
+console.log ("7:02pm");
 
 $("#results").hide();
 console.log ("results hidden");
@@ -96,7 +95,7 @@ function dataPull() {
         },
         {
           sql: "",
-          cartocss: " ",
+          cartocss: "",
         }]
       }, {}, function(data) {
         stationData = data;
@@ -114,8 +113,6 @@ function dataPull() {
 console.log ("about to call datapull()");
 dataPull();
 console.log ("datapull() called");
-
-
 
 // STATION COORDINATE FUNCTIONS
     // Functions to get specific station coordinates when station is selected:
