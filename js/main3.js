@@ -14,8 +14,11 @@ var map = L.map('map', {
   zoom: 12
 });
 
-var Stamen_TonerLite = L.tileLayer("https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png", {
-  attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+// https://cartodb-basemaps-{s}.global.ssl.fastly.net/{light_nolabels}/{z}/{x}/{y}.png
+// https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png
+
+var Stamen_TonerLite = L.tileLayer("hhttps://cartodb-basemaps-{s}.global.ssl.fastly.net/{light_nolabels}/{z}/{x}/{y}.png", {
+  attribution: " ",
   subdomains: 'abcd',
   minZoom: 0,
   maxZoom: 20,
@@ -67,7 +70,7 @@ function rb2Selected(){
     // else stationData didn't exist; it makes it so that the SQL is truly refreshing and layers cannot appear on top of each other;
     // it is easier for me, personally, to work with and understand.
 function dataPull() {
-  var dataDummy = cartodb.createLayer(map,{
+  var dataDummy = cartodb.createLayer(map,"https://" + username + ".carto.com:443/api/v2/sql?q=",{
     https: true,
     user_name: username,
     type: 'cartodb',
