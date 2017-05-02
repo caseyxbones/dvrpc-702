@@ -43,12 +43,6 @@ window.onclick = function(event) {
     }
 };
 
-$('.dropdown-toggle').dropdown();
-$('#myDropdown').on('show.bs.dropdown', function () {
-  // do something…
-});
-
-
 
 // RADIO BUTTON FUNCTIONS
     // This  helps the "Map Selected()" function code know which data to map on a button click event later
@@ -99,7 +93,7 @@ function dataPull() {
 
 // calls the dataPull and coordinatePull functions independently so that "data" is pulled down once page is loaded
 // makes sure stationData exists right after page load even though nothing is mapped
-dataPull();
+// dataPull();
 
 // STATION COORDINATE FUNCTIONS
     // Functions to get specific station coordinates when station is selected:
