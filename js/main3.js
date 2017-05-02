@@ -13,7 +13,7 @@ var map = L.map('map', {
   zoom: 12
 });
 
-var Stamen_TonerLite = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+var Stamen_TonerLite = L.tileLayer("https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png", {
   attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   subdomains: 'abcd',
   minZoom: 0,
@@ -101,7 +101,7 @@ dataPull();
     // If more stations are added later, the code below can be copied, pasted, and easily modified
     // This meas the mapping functions can be easily expanded and scaled in the future
 function extonCoordinates (){
-    var coordinates = $.getJSON("https://" + username + ".carto.com/api/v2/sql?q=SELECT * FROM regionalrailstations_1 WHERE station LIKE 'Exton'",
+    var coordinates = $.getJSON("https://" + username + ".carto.com:443/api/v2/sql?q=SELECT * FROM regionalrailstations_1 WHERE station LIKE 'Exton'",
     function (data) {
       $.each(data.rows, function(key, val) {
         globalYX.splice(0, 2, val.y, val.x);
@@ -111,7 +111,7 @@ function extonCoordinates (){
 }
 
 function thorndaleCoordinates (){
-    var coordinates = $.getJSON("https://" + username + ".carto.com/api/v2/sql?q=SELECT * FROM regionalrailstations_1 WHERE station LIKE 'Thorndale'",
+    var coordinates = $.getJSON("https://" + username + ".carto.com:443/api/v2/sql?q=SELECT * FROM regionalrailstations_1 WHERE station LIKE 'Thorndale'",
     function (data) {
       $.each(data.rows, function(key, val) {
         globalYX.splice(0, 2, val.y, val.x);
