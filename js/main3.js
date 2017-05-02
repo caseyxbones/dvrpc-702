@@ -1,7 +1,7 @@
 // STRETCH GOALS:
       // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
 
-console.log ("6:12pm");
+console.log ("6:23pm");
 
 
 $("#results").hide();
@@ -79,6 +79,8 @@ function rb2Selected(){
     // This solves several problems: it means any station can be mapped first, whereas before Exton 2011 had to be mapped first or
     // else stationData didn't exist; it makes it so that the SQL is truly refreshing and layers cannot appear on top of each other;
     // it is easier for me, personally, to work with and understand.
+
+
 function dataPull() {
   var dataDummy = cartodb.createLayer(map, {
     https: true,
@@ -96,8 +98,8 @@ function dataPull() {
           sql: "",
           cartocss: ""
         }]
-      }, {}, function(layer) {
-        stationData = layer;
+      }, {}, function(data) {
+        stationData = data;
       }).addTo(map).done(function(layer){
             cdb.vis.Vis.addInfowindow(map,
             layer.getSubLayer(0), ['count_']);
