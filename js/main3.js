@@ -3,9 +3,12 @@
 
 
 
-// $("#results").hide();
-// $("#legend").hide();
-// $("#bufferbtns").hide();
+$("#results").hide();
+console.log ("results hidden");
+$("#legend").hide();
+console.log ("legend hidden");
+$("#bufferbtns").hide();
+console.log ("buffer buttons hiden");
 
 // Leaflet map setup
 var map = L.map('map', {
@@ -88,7 +91,7 @@ function dataPull() {
             cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['count_']);
         });
       dataPull.called = true;
-      // console.log("dataPull status" + " " + "=" + dataPull.called);
+      console.log("dataPull status" + " " + "=" + dataPull.called);
       return dataDummy;
 }
 
