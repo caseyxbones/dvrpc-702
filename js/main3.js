@@ -2,7 +2,6 @@
       // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
 
 
-
 $("#results").hide();
 $("#legend").hide();
 $("#bufferbtns").hide();
@@ -43,13 +42,6 @@ window.onclick = function(event) {
     }
 };
 
-$('.dropdown-toggle').dropdown();
-$('#myDropdown').on('show.bs.dropdown', function () {
-  // do something…
-});
-
-
-
 // RADIO BUTTON FUNCTIONS
     // This  helps the "Map Selected()" function code know which data to map on a button click event later
 function rb1Selected(){
@@ -74,7 +66,7 @@ function rb2Selected(){
 function dataPull() {
   var dataDummy = cartodb.createLayer(map, {
     https: true,
-    user_name: 'caseyxbones',
+    user_name: 'username',
     type: 'cartodb',
     sublayers:
         [
