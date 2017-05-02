@@ -2,6 +2,7 @@
       // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
 
 
+
 $("#results").hide();
 $("#legend").hide();
 $("#bufferbtns").hide();
@@ -42,6 +43,13 @@ window.onclick = function(event) {
     }
 };
 
+$('.dropdown-toggle').dropdown();
+$('#myDropdown').on('show.bs.dropdown', function () {
+  // do something…
+});
+
+
+
 // RADIO BUTTON FUNCTIONS
     // This  helps the "Map Selected()" function code know which data to map on a button click event later
 function rb1Selected(){
@@ -65,30 +73,25 @@ function rb2Selected(){
     // it is easier for me, personally, to work with and understand.
 function dataPull() {
   var dataDummy = cartodb.createLayer(map, {
-    https: true,
-    user_name: 'username',
+    user_name: 'caseyxbones',
     type: 'cartodb',
+    legends:true,
     sublayers:
         [
         {
-          https: true,
           sql: "",
           cartocss: "",
           interactivity: "count_",
         },
         {
-          https: true,
           sql: "",
           cartocss: ""
         }]
       }, {}, function(layer) {
         stationData = layer;
-      }).addTo(map).done(function(layer) {
-            cdb.vis.Vis.addInfowindow(
-              map, layer.getSubLayer(0), ['count_'], {
-                https: true,
-              }
-            );});
+      }).addTo(map).done(function(layer){
+            cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['count_']);
+        });
       dataPull.called = true;
       // console.log("dataPull status" + " " + "=" + dataPull.called);
       return dataDummy;
