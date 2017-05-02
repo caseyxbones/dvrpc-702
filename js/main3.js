@@ -1,7 +1,7 @@
 // STRETCH GOALS:
       // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
 
-console.log ("6:09pm");
+console.log ("6:12pm");
 
 
 $("#results").hide();
