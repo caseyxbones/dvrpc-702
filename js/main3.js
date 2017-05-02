@@ -1,7 +1,7 @@
 // STRETCH GOALS:
       // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
 
-console.log ("6:06pm");
+console.log ("6:09pm");
 
 
 $("#results").hide();
@@ -79,37 +79,24 @@ function rb2Selected(){
     // This solves several problems: it means any station can be mapped first, whereas before Exton 2011 had to be mapped first or
     // else stationData didn't exist; it makes it so that the SQL is truly refreshing and layers cannot appear on top of each other;
     // it is easier for me, personally, to work with and understand.
-// function dataPull() {
-//   var dataDummy = cartodb.createLayer(map, {
-//     https: true,
-//     user_name: username,
-//     type: 'cartodb',
-//     legends:true,
-//     sublayers:
-//         [
-//         {
-//           sql: "",
-//           cartocss: "",
-//           interactivity: "count_",
-//         },
-//         {
-//           sql: "",
-//           cartocss: ""
-//         }]
-//       }, {}, function(layer) {
-//         stationData = layer;
-//       }).addTo(map).done(function(layer){
-//             cdb.vis.Vis.addInfowindow(map,
-//             layer.getSubLayer(0), ['count_']);
-//         });
-//       dataPull.called = true;
-//       console.log("dataPull status" + " " + "=" + " " + dataPull.called);
-//       return dataDummy;
-// }
-
-
 function dataPull() {
-  var dataDummy = cartodb.createLayer(map,"https://caseyxbones.carto.com/api/v1/map?stat_tag=API&config=%7B%22version%22%3A%221.3.0%22%2C%22stat_tag%22%3A%22API%22%2C%22layers%22%3A%5B%7B%22type%22%3A%22cartodb%22%2C%22options%22%3A%7B%22sql%22%3A%22%22%2C%22cartocss%22%3A%22%22%2C%22cartocss_version%22%3A%222.1.0%22%2C%22interactivity%22%3A%5B%22count_%22%5D%7D%7D%2C%7B%22type%22%3A%22cartodb%22%2C%22options%22%3A%7B%22sql%22%3A%22%22%2C%22cartocss%22%3A%22%22%2C%22cartocss_version%22%3A%222.1.0%22%7D%7D%5D%7D&callback=_cdbc_3404275795_1", {}, function(layer) {
+  var dataDummy = cartodb.createLayer(map, {
+    https: true,
+    user_name: username,
+    type: 'cartodb',
+    legends:true,
+    sublayers:
+        [
+        {
+          sql: "",
+          cartocss: "",
+          interactivity: "count_",
+        },
+        {
+          sql: "",
+          cartocss: ""
+        }]
+      }, {}, function(layer) {
         stationData = layer;
       }).addTo(map).done(function(layer){
             cdb.vis.Vis.addInfowindow(map,
@@ -119,8 +106,6 @@ function dataPull() {
       console.log("dataPull status" + " " + "=" + " " + dataPull.called);
       return dataDummy;
 }
-
-
 
 // calls the dataPull and coordinatePull functions independently so that "data" is pulled down once page is loaded
 // makes sure stationData exists right after page load even though nothing is mapped
