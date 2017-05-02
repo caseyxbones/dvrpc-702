@@ -67,7 +67,8 @@ function rb2Selected(){
     // it is easier for me, personally, to work with and understand.
 function dataPull() {
   var dataDummy = cartodb.createLayer(map, {
-    user_name: 'caseyxbones',
+    https: true,
+    user_name: username,
     type: 'cartodb',
     legends:true,
     sublayers:
