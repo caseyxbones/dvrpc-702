@@ -20,7 +20,7 @@ var map = L.map('map', {
 // https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png
 
 var Stamen_TonerLite = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png", {
-  attribution: " ",
+  attribution: "Map tiles by Carto",
   subdomains: 'abcd',
   minZoom: 0,
   maxZoom: 20,
