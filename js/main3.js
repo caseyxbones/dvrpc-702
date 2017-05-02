@@ -1,7 +1,7 @@
 // STRETCH GOALS:
       // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
 
-console.log ("6:23pm");
+console.log ("6:26pm");
 
 
 $("#results").hide();
@@ -90,13 +90,13 @@ function dataPull() {
     sublayers:
         [
         {
-          sql: "",
-          cartocss: "",
+          sql: " ",
+          cartocss: " ",
           interactivity: "count_",
         },
         {
-          sql: "",
-          cartocss: ""
+          sql: " ",
+          cartocss: " "
         }]
       }, {}, function(data) {
         stationData = data;
