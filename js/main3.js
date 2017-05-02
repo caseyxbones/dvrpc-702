@@ -89,13 +89,15 @@ function dataPull() {
             cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['count_']);
         });
       dataPull.called = true;
-      console.log("dataPull status" + " " + "=" + dataPull.called);
+      console.log("dataPull status" + " " + "= " + dataPull.called);
       return dataDummy;
 }
 
 // calls the dataPull and coordinatePull functions independently so that "data" is pulled down once page is loaded
 // makes sure stationData exists right after page load even though nothing is mapped
+console.log ("about to call datapull()");
 dataPull();
+console.log ("datapull() called");
 
 // STATION COORDINATE FUNCTIONS
     // Functions to get specific station coordinates when station is selected:
@@ -109,6 +111,7 @@ function extonCoordinates (){
       });
     }
     );
+    console.log ("extonCoordinates called");
 }
 
 function thorndaleCoordinates (){
@@ -119,6 +122,7 @@ function thorndaleCoordinates (){
       });
     }
     );
+    console.log ("thorndaleCoordinates called");
   }
 
 // STATION DATA SQL FUNCTIONS
