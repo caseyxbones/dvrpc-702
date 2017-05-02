@@ -3,9 +3,9 @@
 
 
 
-$("#results").hide();
-$("#legend").hide();
-$("#bufferbtns").hide();
+// $("#results").hide();
+// $("#legend").hide();
+// $("#bufferbtns").hide();
 
 // Leaflet map setup
 var map = L.map('map', {
