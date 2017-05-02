@@ -93,7 +93,7 @@ function dataPull() {
 
 // calls the dataPull and coordinatePull functions independently so that "data" is pulled down once page is loaded
 // makes sure stationData exists right after page load even though nothing is mapped
-// dataPull();
+dataPull();
 
 // STATION COORDINATE FUNCTIONS
     // Functions to get specific station coordinates when station is selected:
