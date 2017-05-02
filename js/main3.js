@@ -89,7 +89,7 @@ function dataPull() {
             cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['count_']);
         });
       dataPull.called = true;
-      console.log("dataPull status" + " " + "= " + dataPull.called);
+      console.log("dataPull status" + " " + "=" + " " + dataPull.called);
       return dataDummy;
 }
 
