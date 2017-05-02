@@ -76,23 +76,27 @@ function dataPull() {
     https: true,
     user_name: 'caseyxbones',
     type: 'cartodb',
-    legends:true,
     sublayers:
         [
         {
+          https: true,
           sql: "",
           cartocss: "",
           interactivity: "count_",
         },
         {
+          https: true,
           sql: "",
           cartocss: ""
         }]
       }, {}, function(layer) {
         stationData = layer;
-      }).addTo(map).done(function(layer){
-            cdb.vis.Vis.addInfowindow(map, layer.getSubLayer(0), ['count_']);
-        });
+      }).addTo(map).done(function(layer) {
+            cdb.vis.Vis.addInfowindow(
+              map, layer.getSubLayer(0), ['count_'], {
+                https: true,
+              }
+            );});
       dataPull.called = true;
       // console.log("dataPull status" + " " + "=" + dataPull.called);
       return dataDummy;
