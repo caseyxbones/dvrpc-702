@@ -1,7 +1,7 @@
 // STRETCH GOALS:
       // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
 
-console.log ("6:36pm");
+console.log ("6:42pm");
 
 
 $("#results").hide();
@@ -20,7 +20,7 @@ var map = L.map('map', {
 // https://cartodb-basemaps-{s}.global.ssl.fastly.net/{light_nolabels}/{z}/{x}/{y}.png
 // https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png
 
-var Stamen_TonerLite = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png", {
+var Map_Tiles = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png", {
   attribution: "Map tiles by Carto",
   subdomains: 'abcd',
   minZoom: 0,
