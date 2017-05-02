@@ -1,7 +1,7 @@
 // STRETCH GOALS:
       // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
 
-console.log ("this is the new datapull() attempt");
+console.log ("5:57pm");
 
 
 $("#results").hide();
