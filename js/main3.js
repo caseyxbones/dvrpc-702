@@ -1,7 +1,7 @@
 // STRETCH GOALS:
       // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
 
-console.log ("6:35pm");
+console.log ("6:36pm");
 
 
 $("#results").hide();
@@ -90,12 +90,12 @@ function dataPull() {
     sublayers:
         [
         {
-          sql: "SELECT * FROM exton_2011_blocks",
+          sql: "",
           cartocss: "",
           interactivity: "count_",
         },
         {
-          sql: "SELECT * FROM regionalrailstations_1 WHERE station LIKE '%Exton%'",
+          sql: "",
           cartocss: " ",
         }]
       }, {}, function(data) {
