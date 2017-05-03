@@ -1,10 +1,10 @@
-console.log ("11:01");
+console.log ("2:04");
 
-// $("#results").hide();
+$("#results").hide();
 // console.log ("results hidden");
-// $("#legend").hide();
+$("#legend").hide();
 // console.log ("legend hidden");
-// $("#bufferbtns").hide();
+$("#bufferbtns").hide();
 // console.log ("buffer buttons hiden");
 
 // Leaflet map setup
