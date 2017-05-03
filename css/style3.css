@@ -6,7 +6,22 @@
 }
 
 #intro {
-  margin-left: 25px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#SEPTA {
+  padding-left: 5px;
+}
+
+#DVRPC {
+  padding-left: 5px;
+}
+
+.logos {
+  display: inline-block;
+  float:right;
+  padding-top: 5px;
 }
 
 .heading {
@@ -34,47 +49,50 @@ p.body {
 }
 
 .map {
-    position: absolute;
+    position: fixed;
     right: 0px;
     left: 0px;
-    height: 66%;
-    top: 0;
+    height: 85%;
+    top: 165px;
     z-index: -1;
 }
 
 .sidebar {
-    position: absolute;
-    left: 0%;
-    width: 25%;
-    top: 66%;
-    bottom: 0;
-    overflow-y: auto;
-    padding: 20px;
-    font-size: 12px;
-    background-color: #DDDDDD;
+  position: absolute;
+  left: 0%;
+  width: 100%;
+  top: 0%;
+  height: 100px;
+  bottom: 66%;
+  padding: 10px;
+  background-color: #9dbf22;
+  z-index: 10;
 }
 
 .right {
-  position: absolute;
-  left: 25%;
-  width: 75%;
-  top: 66%;
-  bottom: 0px;
-  padding: 20px;
-  z-index: -1;
+  position: relative;
+  background-color: #9dbf22;
+  left: 0%;
+  width: 100%;
+  top: 100px;
+  bottom: 66%;
+  padding-left: 10px;
+  height: 65px;
+  z-index: 10;
 }
 
 .dropdown {
-    position: relative;
+    position: absolute;
     display: inline-block;
     margin-top: 10px;
+    margin-left: 10px;
 }
 
 .abtBtn {
     display: inline-block;
-    position: fixed;
-    background-color: #777777;
-    color: white;
+    position: absolute;
+    background-color: #ffffff;
+    color: #A7357A;
     font-style: normal;
     padding: 10px;
     margin-right: 10%;
@@ -85,7 +103,7 @@ p.body {
 }
 
 .abtBtn:hover, .abtBtn:focus {
-    background-color: #999999;
+    background-color: #A7357A;
     color: white;
     font-style: normal;
     padding: 10px;
@@ -96,13 +114,13 @@ p.body {
 }
 
 .dropbtn {
-    position: fixed;
+    position: relative;
     display: inline-block;
-    background-color: #4c7d9a;
-    color: white;
+    background-color: #ffffff;
+    color: #1B7273;
     font-style: normal;
     padding: 10px;
-    margin-left: 110px;
+    margin-left: 115px;
     font-size: 1em;
     border: none;
     cursor: pointer;
@@ -110,14 +128,20 @@ p.body {
 }
 
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #7097AE;
+  background-color: #1B7273;
+  color: white;
+  font-style: normal;
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
 }
-
 .dropdown-content {
     display: none;
     position: fixed;
     margin-left: 120px;
-    margin-top: 45px;
+    margin-top: 0px;
     background-color: #eee;
     min-width: 125px;
     overflow: auto;
@@ -134,7 +158,7 @@ p.body {
 }
 
 .dropdown a:hover {
-    background-color: #7097AE;
+    background-color: #1B7273;
     color: white;
   }
 
@@ -148,9 +172,28 @@ p.body {
 }
 
 .results {
-  /*background-color: yellow;*/
-  height: 100%;
-  width: 100%;
+    position: fixed;
+    display: inline-block;
+    left: 1%;
+    top: 30%;
+    z-index: 10;
+}
+
+
+
+
+
+#siteTitle {
+  font-size: 2.25em;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #ffffff;
+}
+
+.siteAttribution{
+  font-size: 1em;
+  color: #ffffff;
+  font-weight: normal;
 }
 
 #station_name {
@@ -169,31 +212,35 @@ p.body {
 }
 
 #stationInfo {
-  background-color: #DDDDDD;
-  display: inline-block;
-  float: left;
-  height: 100%;
+  background-color: #ffffff;
+  opacity: 0.65;
+  height: 240px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 10px;
+  padding-top: 8px;
   padding-bottom: 10px;
   border: 0.5px solid #4E4E4E;
-  width: 299px;
+  width: 275px;
   border-radius: 5px;
 }
 
 #stationRidership {
-  background-color: #DDDDDD;
-  height: 100%;
+  background-color: #ffffff;
+  opacity: 0.65;
+  height: 190px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 10px;
+  padding-top: 8px;
   padding-bottom: 10px;
-  margin-left: 10px;
+  margin-top: 10px;
   border: 0.5px solid #4E4E4E;
   display: inline-block;
-  width: 350px;
+  width: 275px;
   border-radius: 5px;
+}
+
+.resultsText{
+  color: black;
 }
 
 .year {
@@ -205,6 +252,10 @@ p.body {
   margin-top: 15px;
 }
 
+#station_location{
+  font-style: italic;
+}
+
 
 
 /*The styling for this legend was adapted from code provided by Tile Mill at the following URL:
@@ -213,9 +264,10 @@ https://tilemill-project.github.io/tilemill/docs/guides/advanced-legends/*/
 .my-legend {
     background-color:;
     position:absolute;
+    display: inline-block;
     right: 1%;
     float:inherit;
-    z-index: 10;
+    z-index: 1;
     padding-top: 1%;
 }
 
@@ -254,21 +306,11 @@ https://tilemill-project.github.io/tilemill/docs/guides/advanced-legends/*/
   color: #777;
 }
 
-
-.my-legend {
-    background-color:;
-    position:absolute;
-    right: 1%;
-    float:inherit;
-    z-index: 10;
-    padding-top: 1%;
-}
-
 .buffers {
-    position: absolute;
+    position: fixed;
     display: inline-block;
     right: 1%;
-    top: 92%;
+    top: 96%;
     z-index: 10;
 }
 

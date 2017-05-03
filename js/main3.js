@@ -1,10 +1,10 @@
 console.log ("11:01");
 
-$("#results").hide();
+// $("#results").hide();
 // console.log ("results hidden");
-$("#legend").hide();
+// $("#legend").hide();
 // console.log ("legend hidden");
-$("#bufferbtns").hide();
+// $("#bufferbtns").hide();
 // console.log ("buffer buttons hiden");
 
 // Leaflet map setup
@@ -35,18 +35,20 @@ var globalYX = [];
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
+
 btn.onclick = function() {
     modal.style.display = "block";
 };
+
 span.onclick = function() {
     modal.style.display = "none";
 };
+
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
-    }
+      }
 };
-
 
 // RADIO BUTTON FUNCTIONS
     // This  helps the "Map Selected()" function code know which data to map on a button click event later
@@ -352,19 +354,19 @@ function getGlobalYX() {
         map.setZoom(11);
         $("#legend").show();
         $("#bufferbtns").show();
-        if (($("#station_name").text() === "Exton Station") && (rb1.checked === true)) {
+        if (($("#station_name").text() === "Exton") && (rb1.checked === true)) {
           // console.log("Someone wants to map Exton 2011!");
           exton2011();
           legendExton11();
           return;
         }
-          else if (($("#station_name").text() === "Exton Station") && (rb2.checked === true)) {
+          else if (($("#station_name").text() === "Exton") && (rb2.checked === true)) {
             // console.log("Someone wants to map Exton 2016!");
             exton2016();
             legendExton16();
             return;
           }
-          else if (($("#station_name").text() === "Thorndale Station") && (rb1.checked === true)) {
+          else if (($("#station_name").text() === "Thorndale") && (rb1.checked === true)) {
             // console.log("Someone wants to map Thorndale 2016!");
             thorndale2016();
             legendThorndale16();
@@ -391,7 +393,7 @@ function showDropdown() {
       // Shouldn't need to be updated.
       function extonResults(){
         $("#myDropdown").hide();
-        $("#station_name").text("Exton Station");
+        $("#station_name").text("Exton");
         $("#line_name").text("Paoli/Thorndale Line");
         $("#station_location").text("Chester, Pennsylvania");
         $("#station_location").text("Chester, Pennsylvania");
@@ -404,7 +406,7 @@ function showDropdown() {
 
       function thorndaleResults(){
         $("#myDropdown").hide();
-        $("#station_name").text("Thorndale Station");
+        $("#station_name").text("Thorndale");
         $("#line_name").text("Paoli/Thorndale Line");
         $("#station_location").text("Chester, Pennsylvania");
         $("#station_location").text("Chester, Pennsylvania");
