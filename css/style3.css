@@ -183,10 +183,6 @@ p.body {
     z-index: 10;
 }
 
-
-
-
-
 #siteTitle {
   font-size: 2.25em;
   font-weight: bold;
@@ -217,7 +213,7 @@ p.body {
 
 #stationInfo {
   background-color: #ffffff;
-  opacity: 0.65;
+  opacity: 0.85;
   height: 240px;
   padding-left: 10px;
   padding-right: 10px;
@@ -230,7 +226,7 @@ p.body {
 
 #stationRidership {
   background-color: #ffffff;
-  opacity: 0.65;
+  opacity: 0.85;
   height: 190px;
   padding-left: 10px;
   padding-right: 10px;
@@ -253,8 +249,19 @@ p.body {
 }
 
 #mapSelected {
+  background-color: #EF4DB0;
   margin-top: 15px;
+  color: #fff;
 }
+
+#mapSelected:hover, #mapSelected:focus {
+    background-color: #BF3D8C;
+}
+
+
+
+
+
 
 #station_location{
   font-style: italic;
