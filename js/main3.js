@@ -478,6 +478,8 @@ function showDropdown() {
       $("#clearMap").click(function(){
         console.log("The 'Map Selected' button has been clicked");
         stationData.hide();
+        $("#legend").hide();
+        $("#bufferbtns").hide();
         clearBuffers();
         console.log("stationData.show() executed");
       });
