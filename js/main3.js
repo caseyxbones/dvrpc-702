@@ -1,23 +1,17 @@
-// STRETCH GOALS:
-      // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
-
-console.log ("10:30pm");
+console.log ("11:01");
 
 $("#results").hide();
-console.log ("results hidden");
+// console.log ("results hidden");
 $("#legend").hide();
-console.log ("legend hidden");
+// console.log ("legend hidden");
 $("#bufferbtns").hide();
-console.log ("buffer buttons hiden");
+// console.log ("buffer buttons hiden");
 
 // Leaflet map setup
 var map = L.map('map', {
   center: [39.952372, -75.163584],
   zoom: 12
 });
-
-// https://cartodb-basemaps-{s}.global.ssl.fastly.net/{light_nolabels}/{z}/{x}/{y}.png
-// https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png
 
 var Map_Tiles = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png", {
   attribution: "Map tiles by Carto",
@@ -27,7 +21,7 @@ var Map_Tiles = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/
   ext: 'png'
 }).addTo(map);
 
-console.log ("map tiles added to map");
+// console.log ("map tiles added to map");
 
 // Global Variables
 var username = "caseyxbones";
@@ -35,7 +29,7 @@ var globalData;
 var unit = 'miles';
 var globalYX = [];
 
-console.log ("global variables created");
+// console.log ("global variables created");
 
 //MODAL
 var modal = document.getElementById('myModal');
@@ -43,16 +37,13 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 btn.onclick = function() {
     modal.style.display = "block";
-    console.log ("modal style display block");
 };
 span.onclick = function() {
     modal.style.display = "none";
-    console.log ("modal style display none");
 };
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
-        console.log ("event target modal on window click");
     }
 };
 
@@ -78,8 +69,6 @@ function rb2Selected(){
     // This solves several problems: it means any station can be mapped first, whereas before Exton 2011 had to be mapped first or
     // else stationData didn't exist; it makes it so that the SQL is truly refreshing and layers cannot appear on top of each other;
     // it is easier for me, personally, to work with and understand.
-
-
 function dataPull() {
   var dataDummy = cartodb.createLayer(map, {
     user_name: username,
@@ -103,15 +92,13 @@ function dataPull() {
             layer.getSubLayer(0), ['count_']);
         });
       dataPull.called = true;
-      console.log("dataPull status" + " " + "=" + " " + dataPull.called);
+      // console.log("dataPull status" + " " + "=" + " " + dataPull.called);
       return dataDummy;
 }
 
 // calls the dataPull and coordinatePull functions independently so that "data" is pulled down once page is loaded
 // makes sure stationData exists right after page load even though nothing is mapped
-console.log ("about to call datapull()");
 dataPull();
-console.log ("datapull() called");
 
 // STATION COORDINATE FUNCTIONS
     // Functions to get specific station coordinates when station is selected:
@@ -125,7 +112,7 @@ function extonCoordinates (){
       });
     }
     );
-    console.log ("extonCoordinates called");
+    // console.log ("extonCoordinates called");
 }
 
 function thorndaleCoordinates (){
@@ -136,7 +123,7 @@ function thorndaleCoordinates (){
       });
     }
     );
-    console.log ("thorndaleCoordinates called");
+    // console.log ("thorndaleCoordinates called");
   }
 
 
@@ -146,7 +133,7 @@ function thorndaleCoordinates (){
     // If more stations are added later, the code below can be copied, pasted, and easily modified
     // This meas the mapping functions can be easily expanded and scaled in the future
 function exton2011() {
-    console.log("exton2011 called");
+    // console.log("exton2011 called");
     layerSelected = stationData.getSubLayer(0);
     layerSelected.setSQL("SELECT * FROM exton_2011_blocks");
     layerSelected.setCartoCSS("#layer { polygon-fill: ramp([count_], (#ffffb2, #fecc5c, #fd8d3c, #f03b20, #bd0026), quantiles); line-width: 1; line-color: #FFF; line-opacity: 0.5; }");
@@ -156,7 +143,7 @@ function exton2011() {
 }
 
 function exton2016() {
-    console.log("exton2016 called");
+    // console.log("exton2016 called");
     layerSelected = stationData.getSubLayer(0);
     layerSelected.setSQL("SELECT * FROM exton_2016_blocks");
     layerSelected.setCartoCSS("#layer { polygon-fill: ramp([count_], (#c4e6c3, #80c799, #4da284, #2d7974, #1d4f60), quantiles); line-width: 1; line-color: #FFF; line-opacity: 0.5; }");
@@ -166,7 +153,7 @@ function exton2016() {
 }
 
 function thorndale2016() {
-    console.log("thorndale2016 called");
+    // console.log("thorndale2016 called");
     layerSelected = stationData.getSubLayer(0);
     layerSelected.setSQL("SELECT * FROM thorndale_2016_blocks");
     layerSelected.setCartoCSS("#layer { polygon-fill: ramp([count_], (#f3e79b, #fab27f, #eb7f86, #b95e9a, #5c53a5), quantiles); line-width: 1; line-color: #FFF; line-opacity: 0.5; }");
@@ -366,33 +353,33 @@ function getGlobalYX() {
         $("#legend").show();
         $("#bufferbtns").show();
         if (($("#station_name").text() === "Exton Station") && (rb1.checked === true)) {
-          console.log("Someone wants to map Exton 2011!");
+          // console.log("Someone wants to map Exton 2011!");
           exton2011();
           legendExton11();
           return;
         }
           else if (($("#station_name").text() === "Exton Station") && (rb2.checked === true)) {
-            console.log("Someone wants to map Exton 2016!");
+            // console.log("Someone wants to map Exton 2016!");
             exton2016();
             legendExton16();
             return;
           }
           else if (($("#station_name").text() === "Thorndale Station") && (rb1.checked === true)) {
-            console.log("Someone wants to map Thorndale 2016!");
+            // console.log("Someone wants to map Thorndale 2016!");
             thorndale2016();
             legendThorndale16();
             return;
           }
           else {
             alert("Please select data to map");
-            console.log("No data is selected!");
+            // console.log("No data is selected!");
           }
       }
 
 function showDropdown() {
     showDropdown.called = true;
-    console.log("showDropdown.called()"+ " " + "=" + " " + showDropdown.called);
-    console.log("dataPull called within showDropdown");
+    // console.log("showDropdown.called()"+ " " + "=" + " " + showDropdown.called);
+    // console.log("dataPull called within showDropdown");
     $("#myDropdown").show();
 }
 
@@ -438,7 +425,7 @@ function showDropdown() {
 // Click Events
     // These are the things that actually activate everything else in this application.
       $("#Home").click(function(){
-        console.log("Re-center map has been clicked");
+        // console.log("Re-center map has been clicked");
         stationData.hide();
         map.panTo(new L.LatLng(39.952372, -75.163584),{animate: true, duration: 1});
         $("#myDropdown").hide();
@@ -449,8 +436,8 @@ function showDropdown() {
       });
 
       $("#Exton").click(function(){
-        console.log("Exton has been clicked in the dropdown menu");
-        console.log("Exton clearMap() has been called");
+        // console.log("Exton has been clicked in the dropdown menu");
+        // console.log("Exton clearMap() has been called");
         map.panTo(new L.LatLng(40.01943118, -75.62175724),{animate: true, duration: 1});
         extonResults();
         extonCoordinates();
@@ -458,9 +445,9 @@ function showDropdown() {
       });
 
       $("#Thorndale").click(function(){
-        console.log("Thorndale has been clicked in the dropdown menu");
-        console.log("Thorndale clearMap() has been called");
-        console.log("stationData.hide() executed");
+        // console.log("Thorndale has been clicked in the dropdown menu");
+        // console.log("Thorndale clearMap() has been called");
+        // console.log("stationData.hide() executed");
         map.panTo(new L.LatLng(39.99277222, -75.76289642),{animate: true, duration: 1});
         thorndaleResults();
         thorndaleCoordinates();
@@ -468,18 +455,17 @@ function showDropdown() {
       });
 
       $("#mapSelected").click(function(){
-        console.log("The 'Map Selected' button has been clicked");
+        // console.log("The 'Map Selected' button has been clicked");
         stationData.hide();
         MapSelected();
         stationData.show();
-        console.log("stationData.show() executed");
+        // console.log("stationData.show() executed");
       });
 
       $("#clearMap").click(function(){
-        console.log("The 'Map Selected' button has been clicked");
+        // console.log("The 'Map Selected' button has been clicked");
         stationData.hide();
         $("#legend").hide();
         $("#bufferbtns").hide();
         clearBuffers();
-        console.log("stationData.show() executed");
       });
