@@ -1,7 +1,7 @@
 // STRETCH GOALS:
       // Figure out how to calculate the count for all blocks within a given buffer (turf.js probably)
 
-console.log ("7:02pm");
+console.log ("10:30pm");
 
 $("#results").hide();
 console.log ("results hidden");
@@ -82,7 +82,6 @@ function rb2Selected(){
 
 function dataPull() {
   var dataDummy = cartodb.createLayer(map, {
-    https: true,
     user_name: username,
     type: 'cartodb',
     legends:true,
@@ -97,7 +96,7 @@ function dataPull() {
           sql: "",
           cartocss: "",
         }]
-      }, {}, function(data) {
+      }, {https: true,}, function(data) {
         stationData = data;
       }).addTo(map).done(function(layer){
             cdb.vis.Vis.addInfowindow(map,
