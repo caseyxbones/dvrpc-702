@@ -402,6 +402,12 @@ function showDropdown() {
         $("#rb2").show();
         $("#year2").text("2016");
         $("#results").show();
+        $("#passengers").text(" 762 passengers");
+        $("#passRank").text(" 29");
+        $("#pedStats").text(" 26% (197 passengers)");
+        $("#bikeStats").text(" 0% (0 passengers)");
+        $("#busStats").text(" 0% (0 passengers)");
+        $("#carStats").text(" 74% (197 passengers)");
       }
 
       function thorndaleResults(){
